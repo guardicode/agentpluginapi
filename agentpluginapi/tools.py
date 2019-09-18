@@ -10,7 +10,7 @@ import re
 from six.moves import range
 
 from agentpluginapi.pyinstaller_utils import get_binary_file_path
-from agentpluginapi.utils import is_64bit_python
+from agentpluginapi.utils.environment import is_64bit_python
 
 DEFAULT_TIMEOUT = 10
 
