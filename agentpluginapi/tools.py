@@ -7,8 +7,6 @@ import struct
 import time
 import re
 
-from six.moves import range
-
 from agentpluginapi.pyinstaller_utils import get_binary_file_path
 from agentpluginapi.utils.environment import is_64bit_python
 
