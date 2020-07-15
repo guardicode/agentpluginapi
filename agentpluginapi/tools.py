@@ -1,11 +1,11 @@
 import logging
-import sys
-import subprocess
+import re
 import select
 import socket
 import struct
+import subprocess
+import sys
 import time
-import re
 
 from agentpluginapi.info import get_routes, local_ips
 from agentpluginapi.pyinstaller_utils import get_binary_file_path
