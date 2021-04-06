@@ -1,4 +1,4 @@
-from agentpluginapi.host import VictimHost
+from agentpluginapi.host import VictimHost  # noqa: F401
 
 __author__ = 'itamar'
 
