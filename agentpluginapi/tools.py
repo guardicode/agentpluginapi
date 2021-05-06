@@ -11,8 +11,6 @@ from agentpluginapi.info import get_routes, local_ips
 
 DEFAULT_TIMEOUT = 10
 
-IP_ADDR_RE = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
-IP_ADDR_PARENTHESES_RE = r"\(" + IP_ADDR_RE + r"\)"
 
 LOG = logging.getLogger(__name__)
 SLEEP_BETWEEN_POLL = 0.5
