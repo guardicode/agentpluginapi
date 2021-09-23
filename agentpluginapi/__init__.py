@@ -1,4 +1,4 @@
-from agentpluginapi.host import VictimHost  # noqa: F401
+from agentpluginapi.host import VictimHost
 
 MONKEY_ARG = "m0nk3y"
 DROPPER_ARG = "dr0pp3r"
