@@ -4,9 +4,10 @@ import socket
 import struct
 import sys
 
+
 from agentpluginapi.info import get_routes
 
-DEFAULT_TIMEOUT = 10
+
 
 
 logger = logging.getLogger(__name__)
