@@ -6,6 +6,7 @@ import sys
 from typing import List, Tuple, Union
 
 
+from common.network.network_utils import address_to_ip_port
 from agentpluginapi.info import get_routes
 
 
@@ -103,13 +104,14 @@ def connect(connections: List[str]) -> Tuple[socket.socket, str, int]:
     :raises: ValueError if an improper connection is provided.
     """
     for connection in connections:
-        ip, _, port = connection.rpartition(":")
-        ip = ip.strip("[]")
+        ip, port = address_to_ip_port(connection)
+        if port is None:
+            raise ValueError("Connection does not contain a port")
         sock = try_connect(ip, int(port))
         if sock:
             return sock, ip, int(port)
 
-    raise ConnectionError
+    raise ConnectionError("Could not connect to a server in the server list")
 
 
 def try_connect(ip: str, port: int) -> Union[socket.socket, None]:
