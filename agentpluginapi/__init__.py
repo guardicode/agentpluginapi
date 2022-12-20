@@ -1,5 +1,4 @@
 from agentpluginapi.host import TargetHost
-from agentpluginapi.target_host_factory import TargetHostFactory
 
 MONKEY_ARG = "m0nk3y"
 DROPPER_ARG = "dr0pp3r"
