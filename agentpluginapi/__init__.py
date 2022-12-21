@@ -1,4 +1,4 @@
-from agentpluginapi.host import TargetHost
+from agentpluginapi.host import TargetHost, host_is_windows
 
 MONKEY_ARG = "m0nk3y"
 DROPPER_ARG = "dr0pp3r"
