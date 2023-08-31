@@ -3,8 +3,8 @@ from typing import Any, Dict
 import pytest
 
 from common import OperatingSystem
-from common.types import NetworkProtocol, NetworkService
-from agentpluginapi import DiscoveredService, FingerprintData
+from common.types import DiscoveredService, NetworkProtocol, NetworkService
+from agentpluginapi import FingerprintData
 
 LINUX_VERSION = "xenial"
 
