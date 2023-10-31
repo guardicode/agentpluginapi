@@ -1,9 +1,8 @@
 from typing import Any, Dict
 
 import pytest
-from monkeytypes import NetworkProtocol, NetworkService, OperatingSystem
+from monkeytypes import DiscoveredService, NetworkProtocol, NetworkService, OperatingSystem
 
-from common.types import DiscoveredService
 from agentpluginapi import FingerprintData
 
 LINUX_VERSION = "xenial"
