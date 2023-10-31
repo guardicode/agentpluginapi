@@ -1,7 +1,6 @@
 import pytest
-from monkeytypes import PortStatus
+from monkeytypes import NetworkPort, PortStatus
 
-from common.types import NetworkPort
 from agentpluginapi import PortScanData, PortScanDataDict
 
 
