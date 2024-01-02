@@ -1,0 +1,36 @@
+{
+  "template": "https://github.com/guardicode/infection-monkey-cookiecutter",
+  "commit": "ecf843de87f18890e15caa3ef6dd3495973ba31b",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "agentpluginapi",
+      "__project_slug": "agentpluginapi",
+      "full_name": "Ilija Lazoroski",
+      "email": "ilija.la@live.com",
+      "github_repo": "agentpluginapi",
+      "platform": "github",
+      "org": "guardicode",
+      "github_url": "guardicode",
+      "url": "https://github.com/guardicode/agentpluginapi",
+      "__year": "2024",
+      "license": "GPLv3",
+      "versioning_scheme": "PEP440",
+      "project_short_description": "Repository containing code for Agent and Plugins.",
+      "python_major_version": "3",
+      "python_minor_version": "11",
+      "hook_shellcheck": "n",
+      "codecov": "y",
+      "travis_ci": "y",
+      "exclude_these_file_in_flake8": "vulture_allowlist.py",
+      "_black_version": "23.9.1",
+      "_dlint_version": "0.14.1",
+      "_flake8_version": "6.0.0",
+      "_isort_version": "5.12.0",
+      "_mypy_version": "1.5.1",
+      "_vulture_version": "2.9.1",
+      "_template": "https://github.com/guardicode/infection-monkey-cookiecutter"
+    }
+  },
+  "directory": null
+}
