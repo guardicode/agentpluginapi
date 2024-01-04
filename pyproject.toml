@@ -45,7 +45,12 @@ paths = ["agentpluginapi", "vulture_allowlist.py"]
 name = "agentpluginapi"
 version = "v0.1.0"
 description = "Repository containing code for Agent and Plugins."
-authors = ["Ilija Lazoroski <ilija.la@live.com>"]
+authors = [
+    "Ilija Lazoroski <ilija.la@live.com>",
+    "Mike Salvatore <mike.s.salvatore@gmail.com>",
+    "Shreya Malviya <shreya.malviya@gmail.com>",
+    "vakarisz <vakarisz@yahoo.com>"
+]
 license = "GPLv3"
 classifiers=[
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
