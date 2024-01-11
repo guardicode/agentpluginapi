@@ -57,6 +57,9 @@ include = ["CHANGELOG.md", "README.md"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+monkey-types = "*"
+monkeytoolbox = "*"
+egg_timer = "*"
 
 [tool.poetry.dev-dependencies]
 black = "23.9.1"
