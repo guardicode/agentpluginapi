@@ -400,13 +400,13 @@ semver = "2.13.0"
 
 [[package]]
 name = "monkeytoolbox"
-version = "0.2.0"
+version = "0.3.0"
 description = "Miscellaneous convenience utilities for Python programs"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "monkeytoolbox-0.2.0-py3-none-any.whl", hash = "sha256:4de28b203a2d268e1b436a6b23b6eabe44537c0b2fc281428cf435e0d10c86bb"},
-    {file = "monkeytoolbox-0.2.0.tar.gz", hash = "sha256:7f29dd776b159da5393b170c37d1c8df7b7f1053e684282a852bbe75bdeba9a0"},
+    {file = "monkeytoolbox-0.3.0-py3-none-any.whl", hash = "sha256:ed00885331e938879330badf0ad6ad17cbfcc26d78eef1ccae0155282397a673"},
+    {file = "monkeytoolbox-0.3.0.tar.gz", hash = "sha256:40e0316ff4b9ec82703fe99774b4552ed0dd33e87306abef11b40ab0211c541a"},
 ]
 
 [package.dependencies]
@@ -1057,4 +1057,4 @@ toml = "*"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c8e4140b52da9ee88f0334ef94c3b4b6e1e78977d9483c16de4bea0b1607b278"
+content-hash = "77adda6f8430b4d0feecd811be30404a9237ccc65cfa0a50675dfc96334bf835"
