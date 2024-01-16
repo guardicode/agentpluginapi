@@ -92,7 +92,7 @@ def _empirical_get_interface_to_target(target: str) -> Optional[IPv4Address]:
 
         routes = get_routes()
         target_long = atol(target)
-        paths = []
+        paths: list[tuple[int, tuple[bytes | str, str, str]]] = []
         for d, m, gw, i, a in routes:
             aa = atol(a)
             if aa == target_long:
