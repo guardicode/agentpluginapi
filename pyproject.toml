@@ -47,6 +47,7 @@ version = "v0.1.0"
 description = "Interfaces and components that comprise the Infection Monkey Agent Plugin API"
 authors = [
     "Ilija Lazoroski <ilija.la@live.com>",
+    "Kekoa Kaaikala <kekoa.kaaikala@gmail.com>",
     "Mike Salvatore <mike.s.salvatore@gmail.com>",
     "Shreya Malviya <shreya.malviya@gmail.com>",
     "vakarisz <vakarisz@yahoo.com>"
