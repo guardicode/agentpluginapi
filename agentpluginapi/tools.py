@@ -5,11 +5,7 @@ import sys
 from ipaddress import IPv4Address, IPv4Interface
 from typing import Iterable, Optional
 
-
 from agentpluginapi.info import get_routes
-
-
-
 
 logger = logging.getLogger(__name__)
 
