@@ -5,6 +5,9 @@ from monkeytypes import OperatingSystem
 
 # TODO: The Island also has an IAgentBinaryRepository with a totally different interface. At the
 #       moment, the Island and Agent have different needs, but at some point we should unify these.
+#       UPDATE: Since this is now in a separate package with a clear and focused purpose, unifying
+#       this interface and the one in the Island may be unnecessary. The Agent and the Island have
+#       different needs.
 
 
 class RetrievalError(RuntimeError):
