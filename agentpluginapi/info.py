@@ -1,7 +1,6 @@
 import abc
 import socket
 import struct
-from dataclasses import dataclass
 from typing import List, Optional, Sequence, Tuple
 
 from monkeytoolbox import get_os
@@ -17,12 +16,6 @@ SIOCGIFADDR = 0x8915  # get PA address
 SIOCGIFNETMASK = 0x891B  # get network PA mask
 RTF_UP = 0x0001  # Route usable
 RTF_REJECT = 0x0200
-
-
-@dataclass
-class NetworkAddress:
-    ip: str
-    domain: Optional[str]
 
 
 def get_routes() -> List[Tuple[int, int, str, bytes, str]]:
