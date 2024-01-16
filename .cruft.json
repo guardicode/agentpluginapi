@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/guardicode/infection-monkey-cookiecutter",
-  "commit": "ecf843de87f18890e15caa3ef6dd3495973ba31b",
+  "commit": "80df1e52622ffc903dc62dddc49f57a898394e3c",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -16,9 +16,10 @@
       "__year": "2024",
       "license": "GPLv3",
       "versioning_scheme": "PEP440",
-      "project_short_description": "Repository containing code for Agent and Plugins.",
+      "project_short_description": "Interfaces and components that comprise the Infection Monkey Agent Plugin API",
       "python_major_version": "3",
       "python_minor_version": "11",
+      "support_type_checking": "y",
       "hook_shellcheck": "n",
       "codecov": "y",
       "travis_ci": "y",
