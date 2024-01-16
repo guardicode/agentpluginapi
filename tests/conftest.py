@@ -1,6 +1,10 @@
+from unittest.mock import MagicMock
+
 import pytest
-from agentpluginapi import TCPPortSelector
+
+from agentpluginapi import ITCPPortSelector
+
 
 @pytest.fixture(scope="session")
-def tcp_port_selector() -> TCPPortSelector:
-    return TCPPortSelector()
+def tcp_port_selector() -> ITCPPortSelector:
+    return MagicMock(spec=ITCPPortSelector)

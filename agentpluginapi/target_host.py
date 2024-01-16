@@ -6,7 +6,7 @@ from typing import Optional, Set
 from monkeytypes import MutableInfectionMonkeyBaseModel, NetworkPort, OperatingSystem, PortStatus
 from pydantic import ConfigDict, Field, TypeAdapter, field_serializer
 
-from . import PortScanData
+from .port_scan_data import PortScanData
 
 
 class PortScanDataDict(UserDict[NetworkPort, PortScanData]):

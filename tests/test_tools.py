@@ -35,7 +35,7 @@ EXCLUDED_IPS = (
 
 def test_empty_interfaces(monkeypatch):
     monkeypatch.setattr(
-        "infection_monkey.network.tools._empirical_get_interface_to_target",
+        "agentpluginapi.tools._empirical_get_interface_to_target",
         lambda *args, **kwargs: None,
     )
     assert get_interface_to_target([], IPv4Address("192.168.1.10")) is None
@@ -49,7 +49,7 @@ def test_target_reachable(ip):
 @pytest.mark.parametrize("ip", EXCLUDED_IPS)
 def test_target_unreachable(ip, monkeypatch):
     monkeypatch.setattr(
-        "infection_monkey.network.tools._empirical_get_interface_to_target",
+        "agentpluginapi.tools._empirical_get_interface_to_target",
         lambda *args, **kwargs: None,
     )
     assert get_interface_to_target(INTERFACES, ip) is None
@@ -58,7 +58,7 @@ def test_target_unreachable(ip, monkeypatch):
 @pytest.mark.parametrize("ip", EXCLUDED_IPS)
 def test_empirical_fallback(monkeypatch, ip):
     monkeypatch.setattr(
-        "infection_monkey.network.tools._empirical_get_interface_to_target",
+        "agentpluginapi.tools._empirical_get_interface_to_target",
         lambda *args, **kwargs: INTERFACES[2].ip,
     )
     # import pudb; pu.db
