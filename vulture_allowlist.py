@@ -1,0 +1,99 @@
+from agentpluginapi import (
+    AgentBinaryDownloadReservation,
+    AgentBinaryDownloadTicket,
+    ExploiterResult,
+    FingerprintData,
+    IAgentBinaryRepository,
+    IAgentOTPProvider,
+    IHTTPAgentBinaryServerRegistrar,
+    IPropagationCredentialsRepository,
+    ITCPPortSelector,
+    LocalMachineInfo,
+    PayloadResult,
+    PingScanData,
+    PortScanData,
+    PortScanDataDict,
+    RetrievalError,
+    TargetHost,
+    TargetHostPorts,
+)
+
+ITCPPortSelector
+ITCPPortSelector.get_free_tcp_port
+ITCPPortSelector.min_range
+ITCPPortSelector.max_range
+ITCPPortSelector.lease_time_sec
+ITCPPortSelector.preferred_ports
+
+LocalMachineInfo
+LocalMachineInfo.operating_system
+LocalMachineInfo.temporary_directory
+
+PayloadResult
+PayloadResult.success
+PayloadResult.error_message
+
+PingScanData
+PingScanData.response_received
+PingScanData.os
+
+PortScanData.protocol
+PortScanData.banner
+PortScanData.service
+
+PortScanDataDict.closed
+
+TargetHost
+TargetHost.ip
+TargetHost.operating_system
+TargetHost.icmp
+TargetHost.ports_status
+
+TargetHostPorts.model_config
+TargetHostPorts.tcp_ports
+TargetHostPorts.udp_ports
+TargetHostPorts.dump_ports
+
+AgentBinaryDownloadReservation
+AgentBinaryDownloadReservation.id
+AgentBinaryDownloadReservation.operating_system
+AgentBinaryDownloadReservation.transform_agent_binary
+AgentBinaryDownloadReservation.download_url
+AgentBinaryDownloadReservation.download_completed
+
+AgentBinaryDownloadTicket.id
+AgentBinaryDownloadTicket.download_url
+AgentBinaryDownloadTicket.download_completed
+
+ExploiterResult
+ExploiterResult.exploitation_success
+ExploiterResult.propagation_success
+ExploiterResult.os
+ExploiterResult.info
+ExploiterResult.error_message
+
+FingerprintData
+FingerprintData.os_type
+FingerprintData.os_version
+FingerprintData.services
+
+RetrievalError
+
+IAgentBinaryRepository
+IAgentBinaryRepository.get_agent_binary
+
+IAgentOTPProvider
+IAgentOTPProvider.get_otp
+
+IHTTPAgentBinaryServerRegistrar
+IHTTPAgentBinaryServerRegistrar.reserve_download
+IHTTPAgentBinaryServerRegistrar.operating_system
+IHTTPAgentBinaryServerRegistrar.requestor_ip
+IHTTPAgentBinaryServerRegistrar.agent_binary_transform
+IHTTPAgentBinaryServerRegistrar.clear_reservation
+IHTTPAgentBinaryServerRegistrar.reservation_id
+
+IPropagationCredentialsRepository
+IPropagationCredentialsRepository.add_credentials
+IPropagationCredentialsRepository.credentials_to_add
+IPropagationCredentialsRepository.get_credentials
