@@ -1,8 +1,7 @@
 # agentpluginapi
 
-This project contains a collection of functions, classes and
-utilities written in Python. It is used mainly by [Infection
-Monkey](https://github.com/guardicore/monkey).
+This project contains the interfaces and classes that make up [Infection
+Monkey's](https://github.com/guardicore/monkey) Agent/plugin interface.
 
 ## Installation
 `pip install monkey-agentpluginapi`
