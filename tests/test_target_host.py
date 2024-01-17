@@ -1,7 +1,7 @@
 import pytest
 from monkeytypes import NetworkPort, PortStatus
 
-from agentpluginapi import PortScanData, PortScanDataDict
+from agentpluginapi import PortScanData, PortScanDataDict, TargetHost
 
 
 def test_port_scan_data_dict__constructor():
@@ -84,3 +84,10 @@ def test_open_tcp_ports():
     )
 
     assert tcp_ports.open == expected_open_ports
+
+
+def test_target_host_hash():
+    t1 = TargetHost(ip="10.0.0.1", icmp=False)
+    t2 = TargetHost(ip="10.0.0.1", icmp=True)
+
+    assert hash(t1) == hash(t2)
