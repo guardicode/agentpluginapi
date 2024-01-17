@@ -1,7 +1,7 @@
 from .target_host import TargetHost, PortScanDataDict, TargetHostPorts
 from .port_scan_data import PortScanData
 from .ping_scan_data import PingScanData
-from .info import ITCPPortSelector
+from .i_tcp_port_selector import ITCPPortSelector
 from .fingerprint_data import FingerprintData
 from .i_agent_binary_repository import IAgentBinaryRepository, RetrievalError
 from .agent_binary_request import AgentBinaryDownloadTicket, AgentBinaryDownloadReservation
