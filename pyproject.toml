@@ -43,7 +43,7 @@ paths = ["agentpluginapi", "vulture_allowlist.py"]
 
 [tool.poetry]
 name = "monkey-agentpluginapi"
-version = "v0.1.0"
+version = "v0.2.0"
 description = "Interfaces and components that comprise the Infection Monkey Agent Plugin API"
 authors = [
     "Ilija Lazoroski <ilija.la@live.com>",

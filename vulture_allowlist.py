@@ -28,6 +28,7 @@ ITCPPortSelector.preferred_ports
 LocalMachineInfo
 LocalMachineInfo.operating_system
 LocalMachineInfo.temporary_directory
+LocalMachineInfo.get_interface_to_target
 
 PayloadResult
 PayloadResult.success
