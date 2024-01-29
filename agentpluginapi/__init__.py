@@ -16,3 +16,4 @@ from .payload_result import PayloadResult
 from .ping_scan_data import PingScanData
 from .port_scan_data import PortScanData
 from .target_host import PortScanDataDict, TargetHost, TargetHostPorts
+from .i_agent_command_builder import IAgentCommandBuilder
