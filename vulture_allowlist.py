@@ -10,6 +10,7 @@ from agentpluginapi import (
     ILinuxAgentCommandBuilder,
     IPropagationCredentialsRepository,
     ITCPPortSelector,
+    IWindowsAgentCommandBuilder,
     LinuxDownloadMethod,
     LinuxDownloadOptions,
     LinuxRunOptions,
@@ -21,6 +22,10 @@ from agentpluginapi import (
     RetrievalError,
     TargetHost,
     TargetHostPorts,
+    WindowsDownloadMethod,
+    WindowsDownloadOptions,
+    WindowsRunOptions,
+    WindowsShell,
 )
 
 ITCPPortSelector
@@ -127,3 +132,26 @@ ILinuxAgentCommandBuilder.get_command
 ILinuxAgentCommandBuilder.reset_command
 ILinuxAgentCommandBuilder.download_options
 ILinuxAgentCommandBuilder.run_options
+
+WindowsDownloadMethod.WEB_REQUEST
+WindowsDownloadMethod.WEB_CLIENT
+
+WindowsShell.CMD
+WindowsShell.POWERSHELL
+
+WindowsDownloadOptions.agent_destination_path
+WindowsDownloadOptions.download_method
+WindowsDownloadOptions.download_url
+
+WindowsRunOptions.agent_destination_path
+WindowsRunOptions.dropper_execution_mode
+WindowsRunOptions.shell
+WindowsRunOptions.dropper_destination_path
+WindowsRunOptions.check_dropper_execution
+
+IWindowsAgentCommandBuilder.build_download_command
+IWindowsAgentCommandBuilder.build_run_command
+IWindowsAgentCommandBuilder.get_command
+IWindowsAgentCommandBuilder.reset_command
+IWindowsAgentCommandBuilder.download_options
+IWindowsAgentCommandBuilder.run_options
