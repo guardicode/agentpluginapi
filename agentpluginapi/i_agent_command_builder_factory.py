@@ -10,7 +10,7 @@ class IAgentCommandBuilderFactory(ABC):
         self,
     ) -> ILinuxAgentCommandBuilder:
         """
-        Builds an ILinuxAgentCommandBuilder that construct the Agent command
+        Builds an ILinuxAgentCommandBuilder that constructs the Agent command
 
         :return: An ILinuxAgentCommandBuilder instance
         """
@@ -20,7 +20,7 @@ class IAgentCommandBuilderFactory(ABC):
         self,
     ) -> IWindowsAgentCommandBuilder:
         """
-        Builds an IWindowsAgentCommandBuilder that construct the Agent command
+        Builds an IWindowsAgentCommandBuilder that constructs the Agent command
 
         :return: An IWindowsAgentCommandBuilder instance
         """
