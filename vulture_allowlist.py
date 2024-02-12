@@ -5,6 +5,7 @@ from agentpluginapi import (
     ExploiterResult,
     FingerprintData,
     IAgentBinaryRepository,
+    IAgentCommandBuilderFactory,
     IAgentOTPProvider,
     IHTTPAgentBinaryServerRegistrar,
     ILinuxAgentCommandBuilder,
@@ -155,3 +156,6 @@ IWindowsAgentCommandBuilder.get_command
 IWindowsAgentCommandBuilder.reset_command
 IWindowsAgentCommandBuilder.download_options
 IWindowsAgentCommandBuilder.run_options
+
+IAgentCommandBuilderFactory.create_linux_agent_command_builder
+IAgentCommandBuilderFactory.create_windows_agent_command_builder
