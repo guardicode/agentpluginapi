@@ -16,4 +16,10 @@ from .payload_result import PayloadResult
 from .ping_scan_data import PingScanData
 from .port_scan_data import PortScanData
 from .target_host import PortScanDataDict, TargetHost, TargetHostPorts
-from .i_agent_command_builder import IAgentCommandBuilder
+from .dropper_execution_mode import DropperExecutionMode
+from .i_linux_agent_command_builder import (
+    LinuxDownloadMethod,
+    LinuxDownloadOptions,
+    LinuxRunOptions,
+    ILinuxAgentCommandBuilder,
+)

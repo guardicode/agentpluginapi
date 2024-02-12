@@ -1,13 +1,18 @@
 from agentpluginapi import (
     AgentBinaryDownloadReservation,
     AgentBinaryDownloadTicket,
+    DropperExecutionMode,
     ExploiterResult,
     FingerprintData,
     IAgentBinaryRepository,
     IAgentOTPProvider,
     IHTTPAgentBinaryServerRegistrar,
+    ILinuxAgentCommandBuilder,
     IPropagationCredentialsRepository,
     ITCPPortSelector,
+    LinuxDownloadMethod,
+    LinuxDownloadOptions,
+    LinuxRunOptions,
     LocalMachineInfo,
     PayloadResult,
     PingScanData,
@@ -98,3 +103,27 @@ IPropagationCredentialsRepository
 IPropagationCredentialsRepository.add_credentials
 IPropagationCredentialsRepository.credentials_to_add
 IPropagationCredentialsRepository.get_credentials
+
+DropperExecutionMode.NONE
+DropperExecutionMode.SCRIPT
+DropperExecutionMode.DROPPER
+
+LinuxDownloadMethod.WGET
+LinuxDownloadMethod.CURL
+
+LinuxDownloadOptions.agent_destination_path
+LinuxDownloadOptions.download_url
+LinuxDownloadOptions.download_method
+
+
+LinuxRunOptions.agent_destination_path
+LinuxRunOptions.dropper_destination_path
+LinuxRunOptions.dropper_execution_mode
+LinuxRunOptions.check_dropper_execution
+
+ILinuxAgentCommandBuilder.build_download_command
+ILinuxAgentCommandBuilder.build_run_command
+ILinuxAgentCommandBuilder.get_command
+ILinuxAgentCommandBuilder.reset_command
+ILinuxAgentCommandBuilder.download_options
+ILinuxAgentCommandBuilder.run_options
