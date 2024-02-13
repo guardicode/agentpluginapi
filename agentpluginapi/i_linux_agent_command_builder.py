@@ -32,7 +32,7 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
             and self.dropper_execution_mode != DropperExecutionMode.DROPPER
         ):
             raise ValueError(
-                "Dropper execution mode should be DropperExecutionMode.DROPPER if "
+                "Dropper execution mode must be DropperExecutionMode.DROPPER if "
                 "dropper_destination_path is not None"
             )
         return self
