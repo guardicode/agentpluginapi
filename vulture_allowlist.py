@@ -1,13 +1,20 @@
 from agentpluginapi import (
     AgentBinaryDownloadReservation,
     AgentBinaryDownloadTicket,
+    DropperExecutionMode,
     ExploiterResult,
     FingerprintData,
     IAgentBinaryRepository,
+    IAgentCommandBuilderFactory,
     IAgentOTPProvider,
     IHTTPAgentBinaryServerRegistrar,
+    ILinuxAgentCommandBuilder,
     IPropagationCredentialsRepository,
     ITCPPortSelector,
+    IWindowsAgentCommandBuilder,
+    LinuxDownloadMethod,
+    LinuxDownloadOptions,
+    LinuxRunOptions,
     LocalMachineInfo,
     PayloadResult,
     PingScanData,
@@ -16,6 +23,10 @@ from agentpluginapi import (
     RetrievalError,
     TargetHost,
     TargetHostPorts,
+    WindowsDownloadMethod,
+    WindowsDownloadOptions,
+    WindowsRunOptions,
+    WindowsShell,
 )
 
 ITCPPortSelector
@@ -98,3 +109,53 @@ IPropagationCredentialsRepository
 IPropagationCredentialsRepository.add_credentials
 IPropagationCredentialsRepository.credentials_to_add
 IPropagationCredentialsRepository.get_credentials
+
+DropperExecutionMode.NONE
+DropperExecutionMode.SCRIPT
+DropperExecutionMode.DROPPER
+
+LinuxDownloadMethod.WGET
+LinuxDownloadMethod.CURL
+
+LinuxDownloadOptions.agent_destination_path
+LinuxDownloadOptions.download_url
+LinuxDownloadOptions.download_method
+
+
+LinuxRunOptions.agent_destination_path
+LinuxRunOptions.dropper_destination_path
+LinuxRunOptions.dropper_execution_mode
+LinuxRunOptions.check_dropper_execution
+
+ILinuxAgentCommandBuilder.build_download_command
+ILinuxAgentCommandBuilder.build_run_command
+ILinuxAgentCommandBuilder.get_command
+ILinuxAgentCommandBuilder.reset_command
+ILinuxAgentCommandBuilder.download_options
+ILinuxAgentCommandBuilder.run_options
+
+WindowsDownloadMethod.WEB_REQUEST
+WindowsDownloadMethod.WEB_CLIENT
+
+WindowsShell.CMD
+WindowsShell.POWERSHELL
+
+WindowsDownloadOptions.agent_destination_path
+WindowsDownloadOptions.download_method
+WindowsDownloadOptions.download_url
+
+WindowsRunOptions.agent_destination_path
+WindowsRunOptions.dropper_execution_mode
+WindowsRunOptions.shell
+WindowsRunOptions.dropper_destination_path
+WindowsRunOptions.check_dropper_execution
+
+IWindowsAgentCommandBuilder.build_download_command
+IWindowsAgentCommandBuilder.build_run_command
+IWindowsAgentCommandBuilder.get_command
+IWindowsAgentCommandBuilder.reset_command
+IWindowsAgentCommandBuilder.download_options
+IWindowsAgentCommandBuilder.run_options
+
+IAgentCommandBuilderFactory.create_linux_agent_command_builder
+IAgentCommandBuilderFactory.create_windows_agent_command_builder
