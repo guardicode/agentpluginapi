@@ -31,3 +31,4 @@ from .i_windows_agent_command_builder import (
     IWindowsAgentCommandBuilder,
 )
 from .i_agent_command_builder_factory import IAgentCommandBuilderFactory
+from .i_agent_event_publishler import IAgentEventPublisher
