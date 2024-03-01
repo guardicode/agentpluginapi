@@ -67,6 +67,7 @@ python = "^3.11"
 monkey-types = "*"
 monkeytoolbox = "*"
 egg_timer = "^1.3.0"
+monkeyevents = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 black = "23.9.1"
