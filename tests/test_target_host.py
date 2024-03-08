@@ -1,7 +1,7 @@
 from typing import Any
 
 import pytest
-from monkeytypes import NetworkPort, NetworkProtocol, PortStatus
+from monkeytypes import NetworkPort, NetworkProtocol, NetworkService, PortStatus
 
 from agentpluginapi import PortScanData, PortScanDataDict, TargetHost, TargetHostPorts
 
@@ -119,3 +119,27 @@ def test_target_host_ports__getitem__keyerror(protocol: Any):
 
     with pytest.raises(KeyError):
         thp[protocol]
+
+
+@pytest.mark.parametrize(
+    "service, expected_port", ((NetworkService.HTTP, 1), (NetworkService.SSH, 3))
+)
+def test_get_open_service_ports(service: NetworkService, expected_port: int):
+    psdd = PortScanDataDict(
+        {
+            NetworkPort(1): PortScanData(
+                port=1, status=PortStatus.OPEN, service=NetworkService.HTTP
+            ),
+            NetworkPort(2): PortScanData(
+                port=2, status=PortStatus.CLOSED, service=NetworkService.HTTP
+            ),
+            NetworkPort(3): PortScanData(
+                port=3, status=PortStatus.OPEN, service=NetworkService.SSH
+            ),
+        }
+    )
+
+    open_service_ports = psdd.get_open_service_ports(service)
+
+    assert len(open_service_ports) == 1
+    assert open_service_ports == {NetworkPort(expected_port)}

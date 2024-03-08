@@ -7,6 +7,7 @@ from monkeytypes import (
     MutableInfectionMonkeyBaseModel,
     NetworkPort,
     NetworkProtocol,
+    NetworkService,
     OperatingSystem,
     PortStatus,
 )
@@ -33,6 +34,9 @@ class PortScanDataDict(UserDict[NetworkPort, PortScanData]):
         return {
             port for port, port_scan_data in self.data.items() if port_scan_data.status == status
         }
+
+    def get_open_service_ports(self, service: NetworkService) -> Set[NetworkPort]:
+        return {port for port in self.open if self[port].service == service}
 
 
 class TargetHostPorts(MutableInfectionMonkeyBaseModel):
