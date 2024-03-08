@@ -6,6 +6,11 @@ The format is based on [Keep a
 Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 the [PEP 440 version scheme](https://peps.python.org/pep-0440/#version-scheme).
 
+## v0.5.0 - 2024-03-08
+### Added
+- Implementation for \[NetworkProtocol\] getter in TargetHostPorts. #6
+- PortScanDataDict.get_open_service_ports(). #6
+
 
 ## v0.4.0 - 2024-03-14
 ### Added

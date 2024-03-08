@@ -58,6 +58,7 @@ PortScanData.banner
 PortScanData.service
 
 PortScanDataDict.closed
+PortScanDataDict.get_open_service_ports
 
 TargetHost
 TargetHost.ip
