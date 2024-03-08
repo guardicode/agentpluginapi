@@ -1,7 +1,9 @@
-import pytest
-from monkeytypes import NetworkPort, PortStatus
+from typing import Any
 
-from agentpluginapi import PortScanData, PortScanDataDict, TargetHost
+import pytest
+from monkeytypes import NetworkPort, NetworkProtocol, PortStatus
+
+from agentpluginapi import PortScanData, PortScanDataDict, TargetHost, TargetHostPorts
 
 
 def test_port_scan_data_dict__constructor():
@@ -91,3 +93,29 @@ def test_target_host_hash():
     t2 = TargetHost(ip="10.0.0.1", icmp=True)
 
     assert hash(t1) == hash(t2)
+
+
+def test_target_host_ports__getitem():
+    tcp_ports = PortScanDataDict(
+        {
+            NetworkPort(1): PortScanData(port=1, status=PortStatus.OPEN),
+        }
+    )
+    udp_ports = PortScanDataDict(
+        {
+            NetworkPort(2): PortScanData(port=2, status=PortStatus.CLOSED),
+        }
+    )
+
+    thp = TargetHostPorts(tcp_ports=tcp_ports, udp_ports=udp_ports)
+
+    assert thp[NetworkProtocol.TCP] == tcp_ports
+    assert thp[NetworkProtocol.UDP] == udp_ports
+
+
+@pytest.mark.parametrize("protocol", [None, "string", 1, NetworkProtocol.ICMP])
+def test_target_host_ports__getitem__keyerror(protocol: Any):
+    thp = TargetHostPorts(tcp_ports=PortScanDataDict(), udp_ports=PortScanDataDict())
+
+    with pytest.raises(KeyError):
+        thp[protocol]

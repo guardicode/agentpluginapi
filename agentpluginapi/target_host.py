@@ -3,7 +3,13 @@ from collections import UserDict
 from ipaddress import IPv4Address
 from typing import Optional, Set
 
-from monkeytypes import MutableInfectionMonkeyBaseModel, NetworkPort, OperatingSystem, PortStatus
+from monkeytypes import (
+    MutableInfectionMonkeyBaseModel,
+    NetworkPort,
+    NetworkProtocol,
+    OperatingSystem,
+    PortStatus,
+)
 from pydantic import ConfigDict, Field, TypeAdapter, field_serializer
 
 from .port_scan_data import PortScanData
@@ -38,6 +44,14 @@ class TargetHostPorts(MutableInfectionMonkeyBaseModel):
     @field_serializer("tcp_ports", "udp_ports", when_used="json")
     def dump_ports(self, v):
         return dict(v)
+
+    def __getitem__(self, protocol: NetworkProtocol):
+        if protocol == NetworkProtocol.TCP:
+            return self.tcp_ports
+        elif protocol == NetworkProtocol.UDP:
+            return self.udp_ports
+        else:
+            raise KeyError(f"Invalid protocol: {protocol}")
 
 
 class TargetHost(MutableInfectionMonkeyBaseModel):
