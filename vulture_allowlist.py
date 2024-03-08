@@ -6,6 +6,7 @@ from agentpluginapi import (
     FingerprintData,
     IAgentBinaryRepository,
     IAgentCommandBuilderFactory,
+    IAgentEventPublisher,
     IAgentOTPProvider,
     IHTTPAgentBinaryServerRegistrar,
     ILinuxAgentCommandBuilder,
@@ -28,6 +29,9 @@ from agentpluginapi import (
     WindowsRunOptions,
     WindowsShell,
 )
+
+IAgentEventPublisher.publish
+IAgentEventPublisher.event
 
 ITCPPortSelector
 ITCPPortSelector.get_free_tcp_port
@@ -54,6 +58,7 @@ PortScanData.banner
 PortScanData.service
 
 PortScanDataDict.closed
+PortScanDataDict.get_open_service_ports
 
 TargetHost
 TargetHost.ip

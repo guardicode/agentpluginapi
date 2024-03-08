@@ -31,4 +31,3 @@ class IAgentBinaryRepository(metaclass=abc.ABCMeta):
         :return: A file-like object for the requested agent binary
         :raises RetrievalError: If an error occurs when retrieving the agent binary
         """
-        pass

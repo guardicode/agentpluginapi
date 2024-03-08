@@ -24,7 +24,6 @@ class IHTTPAgentBinaryServerRegistrar(metaclass=abc.ABCMeta):
         :raises RuntimeError: If the binary could not be served
         :returns: A ticket to download the Agent binary
         """
-        pass
 
     @abc.abstractmethod
     def clear_reservation(self, reservation_id: ReservationID):
@@ -34,4 +33,3 @@ class IHTTPAgentBinaryServerRegistrar(metaclass=abc.ABCMeta):
         :param reservation_id: The ID of the reservation to be deregistered
         :raises KeyError: If the reservation ID is not registered
         """
-        pass

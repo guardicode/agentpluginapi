@@ -16,4 +16,3 @@ class IAgentOTPProvider(metaclass=abc.ABCMeta):
         :return: An OTP
         :raises RuntimeError: If an OTP cannot be retrieved
         """
-        pass
