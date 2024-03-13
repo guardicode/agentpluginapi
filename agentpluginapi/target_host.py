@@ -62,7 +62,7 @@ class TargetHost(MutableInfectionMonkeyBaseModel):
     ip: IPv4Address
     operating_system: Optional[OperatingSystem] = Field(default=None)
     icmp: bool = Field(default=False)
-    ports_status: TargetHostPorts = Field(default=TargetHostPorts())
+    ports_status: TargetHostPorts = Field(default_factory=TargetHostPorts)
 
     def __hash__(self):
         return hash(self.ip)
