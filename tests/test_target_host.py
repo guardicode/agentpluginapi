@@ -143,3 +143,19 @@ def test_get_open_service_ports(service: NetworkService, expected_port: int):
 
     assert len(open_service_ports) == 1
     assert open_service_ports == {NetworkPort(expected_port)}
+
+
+def create_target_host(ip, port_scan_data: list[PortScanData]):
+    target_host = TargetHost(ip=ip)
+    for psd in port_scan_data:
+        target_host.ports_status.tcp_ports[psd.port] = psd
+    return target_host
+
+
+def test_target_host__constructor_not_altered_when_setting_ports():
+    host = create_target_host("10.0.0.1", [VALID_PORT_SCAN_DATA])
+    assert len(host.ports_status.tcp_ports) == 1
+
+    other_host = create_target_host("10.0.0.2", [])
+    assert len(other_host.ports_status.tcp_ports) == 0
+
