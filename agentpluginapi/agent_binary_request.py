@@ -11,7 +11,7 @@ ReservationID: TypeAlias = UUID
 class AgentBinaryDownloadReservation:
     id: ReservationID
     operating_system: OperatingSystem
-    agent_binary_template: bytes | None
+    agent_binary_wrapper_template: bytes | None
     download_url: str
     download_completed: Event
 

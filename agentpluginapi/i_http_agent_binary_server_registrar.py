@@ -12,14 +12,14 @@ class IHTTPAgentBinaryServerRegistrar(metaclass=abc.ABCMeta):
         self,
         operating_system: OperatingSystem,
         requestor_ip: IPv4Address,
-        agent_binary_template: bytes | None,
+        agent_binary_wrapper_template: bytes | None,
     ) -> AgentBinaryDownloadTicket:
         """
         Register to download an Agent over HTTP
 
         :param operating_system: The operating system for the Agent binary to serve
         :param requestor_ip: The IP address of the client that will download the Agent binary
-        :param agent_binary_transform: A bytes template that the bytes from the Agent binary
+        :param agent_binary_wrapper_template: A bytes template that the bytes from the Agent binary
             will be inserted into. This may be used to, e.g., convert the Agent binary into a
             self-extracting shell script. This template should include the string
             "$(agent_binary)b", which will be replaced by the bytes of the Agent binary.
