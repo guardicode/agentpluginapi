@@ -1,7 +1,6 @@
 from .agent_binary_request import (
     AgentBinaryDownloadReservation,
     AgentBinaryDownloadTicket,
-    AgentBinaryTransform,
     ReservationID,
 )
 from .dropper_execution_mode import DropperExecutionMode

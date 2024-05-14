@@ -1,18 +1,17 @@
 from dataclasses import dataclass
-from typing import Callable, TypeAlias
+from typing import TypeAlias
 from uuid import UUID
 
 from monkeytypes import Event, OperatingSystem
 
 ReservationID: TypeAlias = UUID
-AgentBinaryTransform: TypeAlias = Callable[[bytes], bytes]
 
 
 @dataclass(frozen=True)
 class AgentBinaryDownloadReservation:
     id: ReservationID
     operating_system: OperatingSystem
-    transform_agent_binary: AgentBinaryTransform
+    agent_binary_template: bytes | None
     download_url: str
     download_completed: Event
 

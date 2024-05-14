@@ -3,7 +3,7 @@ from ipaddress import IPv4Address
 
 from monkeytypes import OperatingSystem
 
-from .agent_binary_request import AgentBinaryDownloadTicket, AgentBinaryTransform, ReservationID
+from .agent_binary_request import AgentBinaryDownloadTicket, ReservationID
 
 
 class IHTTPAgentBinaryServerRegistrar(metaclass=abc.ABCMeta):
@@ -12,7 +12,7 @@ class IHTTPAgentBinaryServerRegistrar(metaclass=abc.ABCMeta):
         self,
         operating_system: OperatingSystem,
         requestor_ip: IPv4Address,
-        agent_binary_transform: AgentBinaryTransform,
+        agent_binary_template: bytes | None,
     ) -> AgentBinaryDownloadTicket:
         """
         Register to download an Agent over HTTP
