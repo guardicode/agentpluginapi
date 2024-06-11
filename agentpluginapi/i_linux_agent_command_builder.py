@@ -21,7 +21,7 @@ class LinuxDownloadOptions(InfectionMonkeyBaseModel):
 
 
 class LinuxSetPermissionsOptions(InfectionMonkeyBaseModel):
-    file_path: PurePosixPath
+    agent_destination_path: PurePosixPath
     permissions: int = Field(ge=0, le=0o777, default=0o700)
 
 
