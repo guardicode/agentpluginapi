@@ -29,6 +29,7 @@ from agentpluginapi import (
     WindowsRunOptions,
     WindowsShell,
 )
+from agentpluginapi.i_linux_agent_command_builder import LinuxSetPermissionsOptions
 
 IAgentEventPublisher.publish
 IAgentEventPublisher.event
@@ -126,6 +127,8 @@ LinuxDownloadOptions.agent_destination_path
 LinuxDownloadOptions.download_url
 LinuxDownloadOptions.download_method
 
+LinuxSetPermissionsOptions.file_path
+LinuxSetPermissionsOptions.permissions
 
 LinuxRunOptions.agent_destination_path
 LinuxRunOptions.dropper_destination_path
@@ -134,6 +137,8 @@ LinuxRunOptions.check_dropper_execution
 
 ILinuxAgentCommandBuilder.build_download_command
 ILinuxAgentCommandBuilder.build_run_command
+ILinuxAgentCommandBuilder.build_set_permissions_command
+ILinuxAgentCommandBuilder.set_permissions_options
 ILinuxAgentCommandBuilder.get_command
 ILinuxAgentCommandBuilder.reset_command
 ILinuxAgentCommandBuilder.download_options

@@ -16,6 +16,7 @@ from .i_linux_agent_command_builder import (
     LinuxDownloadMethod,
     LinuxDownloadOptions,
     LinuxRunOptions,
+    LinuxSetPermissionsOptions,
 )
 from .i_propagation_credentials_repository import IPropagationCredentialsRepository
 from .i_tcp_port_selector import ITCPPortSelector
