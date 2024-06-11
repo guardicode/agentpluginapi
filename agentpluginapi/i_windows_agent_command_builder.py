@@ -74,7 +74,7 @@ class IWindowsAgentCommandBuilder(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractclassmethod
-    def reset_command(self):
+    def reset(self):
         """
         Resets the command
         """
