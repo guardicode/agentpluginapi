@@ -74,7 +74,7 @@ class ILinuxAgentCommandBuilder(metaclass=abc.ABCMeta):
         Gets the resulting command
         """
 
-    @abc.abstractclassmethod
+    @abc.abstractmethod
     def reset_command(self):
         """
         Resets the command
