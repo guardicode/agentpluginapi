@@ -6,6 +6,11 @@ The format is based on [Keep a
 Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 the [PEP 440 version scheme](https://peps.python.org/pep-0440/#version-scheme).
 
+## [Unreleased]
+### Added
+- ILinuxAgentCommandBuilder.build_set_permissions_command().
+  https://github.com/guardicore/monkey/issues/4187
+
 ## [v0.8.0] - 2024-06-10
 ### Changed
 - `ReservationID` from a UUID to a string.
