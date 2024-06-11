@@ -1,10 +1,9 @@
 from dataclasses import dataclass
 from typing import TypeAlias
-from uuid import UUID
 
 from monkeytypes import Event, OperatingSystem
 
-ReservationID: TypeAlias = UUID
+ReservationID: TypeAlias = str
 
 
 @dataclass(frozen=True)
