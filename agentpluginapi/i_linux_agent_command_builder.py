@@ -20,7 +20,7 @@ class LinuxDownloadOptions(InfectionMonkeyBaseModel):
     download_url: str
 
 
-class LinuxPermissionChangeOptions(InfectionMonkeyBaseModel):
+class LinuxSetPermissionsOptions(InfectionMonkeyBaseModel):
     file_path: PurePosixPath
     permissions: int = Field(ge=0, le=0o777, default=700)
 
@@ -53,13 +53,11 @@ class ILinuxAgentCommandBuilder(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def build_permission_change_command(
-        self, permission_change_options: LinuxPermissionChangeOptions
-    ):
+    def build_set_permissions_command(self, set_permissions_options: LinuxSetPermissionsOptions):
         """
         Build Agent's binary permission change command
 
-        :param permission_change_options: Options needed for the command to be built
+        :param set_permissions_options: Options needed for the command to be built
         """
 
     @abc.abstractmethod
