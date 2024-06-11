@@ -22,7 +22,7 @@ class LinuxDownloadOptions(InfectionMonkeyBaseModel):
 
 class LinuxSetPermissionsOptions(InfectionMonkeyBaseModel):
     file_path: PurePosixPath
-    permissions: int = Field(ge=0, le=0o777, default=700)
+    permissions: int = Field(ge=0, le=0o777, default=0o700)
 
 
 class LinuxRunOptions(InfectionMonkeyBaseModel):
