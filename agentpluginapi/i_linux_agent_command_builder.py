@@ -4,7 +4,7 @@ from pathlib import PurePosixPath
 from typing import Optional
 
 from monkeytypes import InfectionMonkeyBaseModel
-from pydantic import model_validator
+from pydantic import Field, model_validator
 
 from .dropper_execution_mode import DropperExecutionMode
 
@@ -18,6 +18,11 @@ class LinuxDownloadOptions(InfectionMonkeyBaseModel):
     agent_destination_path: PurePosixPath
     download_method: LinuxDownloadMethod
     download_url: str
+
+
+class LinuxPermissionChangeOptions(InfectionMonkeyBaseModel):
+    file_path: PurePosixPath
+    permissions: int = Field(ge=0, le=0o777, default=700)
 
 
 class LinuxRunOptions(InfectionMonkeyBaseModel):
@@ -45,6 +50,16 @@ class ILinuxAgentCommandBuilder(metaclass=abc.ABCMeta):
         Build Agent's download command
 
         :param download_options: Options needed for the command to be built
+        """
+
+    @abc.abstractmethod
+    def build_permission_change_command(
+        self, permission_change_options: LinuxPermissionChangeOptions
+    ):
+        """
+        Build Agent's binary permission change command
+
+        :param permission_change_options: Options needed for the command to be built
         """
 
     @abc.abstractmethod
