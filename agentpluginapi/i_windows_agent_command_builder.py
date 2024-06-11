@@ -64,7 +64,13 @@ class IWindowsAgentCommandBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def get_command(self) -> str:
         """
-        Gets the resulting command
+        Joins built commands into a one-liner command and returns it
+        """
+
+    @abc.abstractmethod
+    def get_command_list(self) -> list:
+        """
+        Returns the list of built commands
         """
 
     @abc.abstractclassmethod

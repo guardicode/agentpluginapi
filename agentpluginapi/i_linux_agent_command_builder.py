@@ -1,7 +1,7 @@
 import abc
 from enum import Enum, auto
 from pathlib import PurePosixPath
-from typing import Optional
+from typing import Optional, List
 
 from monkeytypes import InfectionMonkeyBaseModel
 from pydantic import model_validator
@@ -58,7 +58,13 @@ class ILinuxAgentCommandBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def get_command(self) -> str:
         """
-        Gets the resulting command
+        Joins built commands into a one-liner command and returns it
+        """
+
+    @abc.abstractmethod
+    def get_command_list(self) -> List[str]:
+        """
+        Returns the list of built commands
         """
 
     @abc.abstractclassmethod
