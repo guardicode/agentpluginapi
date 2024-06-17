@@ -143,6 +143,7 @@ ILinuxAgentCommandBuilder.get_command
 ILinuxAgentCommandBuilder.reset_command
 ILinuxAgentCommandBuilder.download_options
 ILinuxAgentCommandBuilder.run_options
+ILinuxAgentCommandBuilder.add_otp
 
 WindowsDownloadMethod.WEB_REQUEST
 WindowsDownloadMethod.WEB_CLIENT
@@ -166,6 +167,7 @@ IWindowsAgentCommandBuilder.get_command
 IWindowsAgentCommandBuilder.reset_command
 IWindowsAgentCommandBuilder.download_options
 IWindowsAgentCommandBuilder.run_options
+IWindowsAgentCommandBuilder.add_otp
 
 IAgentCommandBuilderFactory.create_linux_agent_command_builder
 IAgentCommandBuilderFactory.create_windows_agent_command_builder

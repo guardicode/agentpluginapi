@@ -54,11 +54,12 @@ class IWindowsAgentCommandBuilder(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def build_run_command(self, run_options: WindowsRunOptions):
+    def build_run_command(self, run_options: WindowsRunOptions, add_otp=True):
         """
         Builds Agent's run command
 
         :param run_options: Options needed for the command to be built
+        :param add_otp: Whether to add the OTP to the command
         """
 
     @abc.abstractmethod
