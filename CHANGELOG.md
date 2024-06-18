@@ -12,8 +12,7 @@ the [PEP 440 version scheme](https://peps.python.org/pep-0440/#version-scheme).
 
 ## [v0.9.0] - 2024-06-11
 ### Added
-- ILinuxAgentCommandBuilder.build_set_permissions_command().
-  https://github.com/guardicore/monkey/issues/4187
+- ILinuxAgentCommandBuilder.build_set_permissions_command(). #10
 
 ## [v0.8.0] - 2024-06-10
 ### Changed
