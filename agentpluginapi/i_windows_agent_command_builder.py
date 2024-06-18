@@ -30,6 +30,7 @@ class WindowsRunOptions(InfectionMonkeyBaseModel):
     dropper_execution_mode: DropperExecutionMode
     shell: WindowsShell
     dropper_destination_path: Optional[PureWindowsPath] = None
+    include_otp: bool = True
 
     @model_validator(mode="after")
     def check_dropper_execution(self) -> "WindowsRunOptions":
@@ -40,6 +41,15 @@ class WindowsRunOptions(InfectionMonkeyBaseModel):
             raise ValueError(
                 "Dropper execution mode must be DropperExecutionMode.DROPPER if "
                 "dropper_destination_path is None"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def check_otp(self) -> "WindowsRunOptions":
+        if not self.include_otp and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
+            raise ValueError(
+                "OTP must be passed when running the dropper script, because "
+                "there's no other secure way to pass it"
             )
         return self
 

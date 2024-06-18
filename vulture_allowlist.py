@@ -134,6 +134,7 @@ LinuxRunOptions.agent_destination_path
 LinuxRunOptions.dropper_destination_path
 LinuxRunOptions.dropper_execution_mode
 LinuxRunOptions.check_dropper_execution
+LinuxRunOptions.check_otp
 
 ILinuxAgentCommandBuilder.build_download_command
 ILinuxAgentCommandBuilder.build_run_command
@@ -143,6 +144,7 @@ ILinuxAgentCommandBuilder.get_command
 ILinuxAgentCommandBuilder.reset_command
 ILinuxAgentCommandBuilder.download_options
 ILinuxAgentCommandBuilder.run_options
+ILinuxAgentCommandBuilder.include_otp
 
 WindowsDownloadMethod.WEB_REQUEST
 WindowsDownloadMethod.WEB_CLIENT
@@ -159,6 +161,7 @@ WindowsRunOptions.dropper_execution_mode
 WindowsRunOptions.shell
 WindowsRunOptions.dropper_destination_path
 WindowsRunOptions.check_dropper_execution
+WindowsRunOptions.check_otp
 
 IWindowsAgentCommandBuilder.build_download_command
 IWindowsAgentCommandBuilder.build_run_command
@@ -166,6 +169,7 @@ IWindowsAgentCommandBuilder.get_command
 IWindowsAgentCommandBuilder.reset_command
 IWindowsAgentCommandBuilder.download_options
 IWindowsAgentCommandBuilder.run_options
+IWindowsAgentCommandBuilder.include_otp
 
 IAgentCommandBuilderFactory.create_linux_agent_command_builder
 IAgentCommandBuilderFactory.create_windows_agent_command_builder
