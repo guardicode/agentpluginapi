@@ -24,3 +24,13 @@ def test_linux_permissions_options(permissions: int):
             agent_destination_path=PurePosixPath("/tmp/agent"),
             permissions=permissions,
         )
+
+
+def test_linux_otp_present_for_dropper_script():
+    with pytest.raises(ValueError):
+        LinuxRunOptions(
+            agent_destination_path=PurePosixPath("/tmp/agent"),
+            dropper_execution_mode=DropperExecutionMode.SCRIPT,
+            dropper_destination_path=PurePosixPath("/tmp/dropper"),
+            include_otp=False,
+        )
