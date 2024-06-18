@@ -29,7 +29,7 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
     agent_destination_path: PurePosixPath
     dropper_execution_mode: DropperExecutionMode
     dropper_destination_path: Optional[PurePosixPath] = None
-    add_otp: bool = True
+    include_otp: bool = True
 
     @model_validator(mode="after")
     def check_dropper_execution(self) -> "LinuxRunOptions":
@@ -45,7 +45,7 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
 
     @model_validator(mode="after")
     def check_otp(self) -> "LinuxRunOptions":
-        if not self.add_otp and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
+        if not self.include and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
             raise ValueError(
                 "OTP must be passed when running the dropper script, because "
                 "there's no other secure way to pass it"

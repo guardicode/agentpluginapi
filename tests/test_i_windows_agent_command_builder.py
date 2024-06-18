@@ -25,5 +25,5 @@ def test_windows_otp_present_for_dropper_script():
             dropper_execution_mode=DropperExecutionMode.SCRIPT,
             shell=WindowsShell.CMD,
             dropper_destination_path=PureWindowsPath("C:\\Windows\\dropper.exe"),
-            add_otp=False,
+            include_otp=False,
         )
