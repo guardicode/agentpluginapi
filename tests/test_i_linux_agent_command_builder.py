@@ -31,6 +31,6 @@ def test_linux_otp_present_for_dropper_script():
         LinuxRunOptions(
             agent_destination_path=PurePosixPath("/tmp/agent"),
             dropper_execution_mode=DropperExecutionMode.SCRIPT,
-            dropper_destination_path=PurePosixPath("/tmp/dropper"),
+            dropper_destination_path=None,
             include_otp=False,
         )
