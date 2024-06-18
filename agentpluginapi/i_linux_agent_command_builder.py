@@ -45,7 +45,7 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
 
     @model_validator(mode="after")
     def check_otp(self) -> "LinuxRunOptions":
-        if not self.include and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
+        if not self.include_otp and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
             raise ValueError(
                 "OTP must be passed when running the dropper script, because "
                 "there's no other secure way to pass it"

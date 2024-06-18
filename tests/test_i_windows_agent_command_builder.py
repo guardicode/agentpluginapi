@@ -24,6 +24,6 @@ def test_windows_otp_present_for_dropper_script():
             agent_destination_path=PureWindowsPath("C:\\agent.exe"),
             dropper_execution_mode=DropperExecutionMode.SCRIPT,
             shell=WindowsShell.CMD,
-            dropper_destination_path=PureWindowsPath("C:\\Windows\\dropper.exe"),
+            dropper_destination_path=None,
             include_otp=False,
         )
