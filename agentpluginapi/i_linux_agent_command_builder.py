@@ -29,6 +29,7 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
     agent_destination_path: PurePosixPath
     dropper_execution_mode: DropperExecutionMode
     dropper_destination_path: Optional[PurePosixPath] = None
+    add_otp: bool = True
 
     @model_validator(mode="after")
     def check_dropper_execution(self) -> "LinuxRunOptions":
@@ -39,6 +40,15 @@ class LinuxRunOptions(InfectionMonkeyBaseModel):
             raise ValueError(
                 "Dropper execution mode must be DropperExecutionMode.DROPPER if "
                 "dropper_destination_path is not None"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def check_otp(self) -> "LinuxRunOptions":
+        if not self.add_otp and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
+            raise ValueError(
+                "OTP must be passed when running the dropper script, because "
+                "there's no other secure way to pass it"
             )
         return self
 
@@ -61,12 +71,11 @@ class ILinuxAgentCommandBuilder(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def build_run_command(self, run_options: LinuxRunOptions, add_otp=True):
+    def build_run_command(self, run_options: LinuxRunOptions):
         """
         Builds Agent's run command
 
         :param run_options: Options needed for the command to be built
-        :param add_otp: Whether to add the OTP to the command
         """
 
     @abc.abstractmethod

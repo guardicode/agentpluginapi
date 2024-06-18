@@ -134,6 +134,7 @@ LinuxRunOptions.agent_destination_path
 LinuxRunOptions.dropper_destination_path
 LinuxRunOptions.dropper_execution_mode
 LinuxRunOptions.check_dropper_execution
+LinuxRunOptions.check_otp
 
 ILinuxAgentCommandBuilder.build_download_command
 ILinuxAgentCommandBuilder.build_run_command
@@ -160,6 +161,7 @@ WindowsRunOptions.dropper_execution_mode
 WindowsRunOptions.shell
 WindowsRunOptions.dropper_destination_path
 WindowsRunOptions.check_dropper_execution
+WindowsRunOptions.check_otp
 
 IWindowsAgentCommandBuilder.build_download_command
 IWindowsAgentCommandBuilder.build_run_command

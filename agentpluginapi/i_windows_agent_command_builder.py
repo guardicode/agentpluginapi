@@ -43,6 +43,15 @@ class WindowsRunOptions(InfectionMonkeyBaseModel):
             )
         return self
 
+    @model_validator(mode="after")
+    def check_otp(self) -> "WindowsRunOptions":
+        if not self.add_otp and self.dropper_execution_mode == DropperExecutionMode.SCRIPT:
+            raise ValueError(
+                "OTP must be passed when running the dropper script, because "
+                "there's no other secure way to pass it"
+            )
+        return self
+
 
 class IWindowsAgentCommandBuilder(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -54,12 +63,11 @@ class IWindowsAgentCommandBuilder(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def build_run_command(self, run_options: WindowsRunOptions, add_otp=True):
+    def build_run_command(self, run_options: WindowsRunOptions):
         """
         Builds Agent's run command
 
         :param run_options: Options needed for the command to be built
-        :param add_otp: Whether to add the OTP to the command
         """
 
     @abc.abstractmethod
